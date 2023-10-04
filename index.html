@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,15 +8,50 @@
     <link rel="stylesheet" href="/estilos/styles.css">
     <title>CONVERSOR</title>
 </head>
+
 <body>
- <main class="content-prinpal">
-    <div class="content_container">
+    <main class="content-prinpal">
+        <div class="content_container">
+            <div class="caixa-principal">
+                <section class="content_value">
+                    <label> Coverter <b>de</b>
+                        <select class="box_select_one">
+                            <option> R$ Real Brasileiro </option>
+                        </select>
+
+                    </label>
+
+                    <label> Converter <b>para</b>
+                        <select class="box_select_two">
+                            <option> € EURO </option>
+                            <option>US$ DOLAR AMERICANO </option>
+
+                        </select>
+
+                    </label>
+
+                    <label>valor
+                        <input class="entrada" type="text" placeholder="digite um valor" alt="valor para digitar">
+                    </label>
+
+                    <button class="button_convert_money"> CONVERTER </button>
 
 
-    </div>
 
- </main>
 
-    
+                </section>
+                <section class="content_value_screen">
+
+                </section>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script src="js/caselamento-de-caracteres.js"></script>
 </body>
+
 </html>

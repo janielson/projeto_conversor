@@ -1,3 +1,72 @@
-.content_container{
-    padding: 16px 30px;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Satisfy&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    background-color: #F4F4F4;
+    outline: none;
+
+
+
 }
+
+.content-prinpal {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+
+.content_container {
+    padding: 0% 5%;
+
+    box-shadow: 4px 5px 10px #fff;
+    opacity: 70%;
+    height: 660px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.caixa-principal {
+    width: 327px;
+}
+
+.caixa-principal select {
+    display: block;
+    height: 48px;
+    width: 100%;
+    border: none;
+    margin-bottom: 10px;
+    padding: 0px 20px;
+    border: 3px solid #BBBBBB;
+    border-radius: 10px;
+    appearance: none;
+}
+
+.entrada {
+    height: 48px;
+    width: 100%;
+    border-radius: 10px;
+    border: 3px solid #BBBBBB ;
+    display: block;
+
+
+}
+
+.button_convert_money{
+    height: 48px;
+    background-color: #772fd3;
+    width: 100%;
+    border: none;
+    margin-top: 24px;
+
+}
+
