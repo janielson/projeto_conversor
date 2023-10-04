@@ -18,12 +18,13 @@ body {
     width: 100%;
     justify-content: center;
     align-items: center;
+    margin-top: 30px;
 
 
 }
 
 
-.content_container {
+.content_grip{
     padding: 0% 5%;
 
     box-shadow: 4px 5px 10px #fff;
@@ -100,4 +101,29 @@ body {
 .box_select_two{
     margin-top: 10px;
    
+}
+
+.content_value_screen{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #772fd3;
+  border-radius: 20px;
+  margin-top: 20px;
+  padding: 10px 10px;
+  height: 300px;
+  width: 327px;
+}
+.content_convert_moneys_screen{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.content_value_screen img {
+    display: block;
+    margin: 0 auto;;
+}
+.content_convert_moneys_screen p {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    
 }

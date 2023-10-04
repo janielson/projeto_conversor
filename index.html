@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="/estilos/reset.css">
     <link rel="stylesheet" href="/estilos/styles.css">
     <title>CONVERSOR</title>
@@ -11,29 +13,29 @@
 
 <body>
     <main class="content-prinpal">
-        <div class="content_container">
+        <div class="content_grip">
             <div class="caixa-principal">
                 <section class="content_value">
-                    <label class="name_convert"> 
+                    <div class="name_convert">
                         converter <b> de </b>
                         <select class="box_select_one">
                             <option> R$ Real Brasileiro </option>
                         </select>
-
-                    </label>
-
-                    <label class="name_convert"> 
+                    
+                    </div>
+                    
+                    <div class="name_convert">
                         Converter <b>para</b>
                         <select class="box_select_two">
                             <option> € EURO </option>
                             <option>US$ DOLAR AMERICANO </option>
-
-                        </select>
-
+                    
+                    </div>
+                    
                     </label>
 
                     <label>valor
-                        <input class="entrada" placeholder="digite um valor">
+                        <input class="entrada" type="number" pattern="[0-9]*\.?[0-9]*" placeholder="digite um valor" >
                     </label>
 
                     <button class="button_convert_money"> CONVERTER </button>
@@ -42,7 +44,23 @@
 
 
                 </section>
+
+
                 <section class="content_value_screen">
+                    <div class="content_convert_moneys_screen">
+                        <img src="/assets/brasil 2.png" alt="">
+                        <p> REAL </p>
+                        <P> R$ 0.00 </P>
+
+
+                    </div>
+                    <img class="img_arrow" src="./assets/arrow.png" alt="">
+                    <div class="content_convert_moneys_screen">
+                        <img src="/assets/estados-unidos (1) 1.png" alt="">
+                        <p> DÓLAR AMERICANO </p>
+                        <p> US$ 0.00 </p>
+
+                    </div>
 
                 </section>
 
@@ -52,7 +70,9 @@
 
     </main>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
     <script src="js/caselamento-de-caracteres.js"></script>
 </body>
 
