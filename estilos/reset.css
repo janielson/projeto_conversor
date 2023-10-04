@@ -30,7 +30,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-    box-sizing: border-box;
+  
 }
 ol, ul {
 	list-style: none;
@@ -50,4 +50,8 @@ table {
 
 a{
     display: inline-block;
+}
+
+input {
+	box-sizing: border-box;
 }
