@@ -59,7 +59,9 @@ body {
     border: 3px solid #BBBBBB ;
     display: block;
     text-align: center;
-    font-weight: 700;
+    font-weight: bolder;
+    margin-top: 10px;
+    font-family: 'Roboto', sans-serif;
     
 
 
@@ -78,4 +80,24 @@ body {
 
 }
 
+.name_convert{
+    margin-bottom: 10px;
+    
+}
+.name_convert b {
+    font-weight: bold;
+    
 
+}
+
+.box_select_one{
+    margin-top: 10px;
+    
+    
+
+}
+
+.box_select_two{
+    margin-top: 10px;
+   
+}
