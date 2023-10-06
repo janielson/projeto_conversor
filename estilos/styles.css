@@ -12,6 +12,11 @@ body {
 
 }
 
+
+label {
+    width: 100%;
+}
+
 .content-prinpal {
     display: flex;
     height: 100vh;
