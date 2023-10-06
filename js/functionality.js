@@ -14,54 +14,64 @@ let valueOfInput = document.querySelector(".entrada");
 
 function convertValues() {
 
- 
-
-  let selectionOfEuroDolar = document.querySelector(".box_select_two").value;
-  let valueScreenBr = document.querySelector(".valuerealbr");
-  let valueScreenUSD = document.querySelector(".valueamerican");
-
-  let valueDolarDay = 5.17;
-
-  let resultadoDolarParaReal = valueOfInput.value / valueDolarDay;
-  
-  
 
 
-  // new Intl.NumberFormat( "String lingua" ,Objeto estiloTipoMoeda ).format() : void
+    let selectionOfEuroDolar = document.querySelector(".box_select_two").value;
+    let valueScreenBr = document.querySelector(".valuerealbr");
+    let valueScreenDolar = document.querySelector(".valueamerican");
+
+    console.log(valueScreenDolar.value);
+
+    let valueDolarDay = 5.17;
+    let valueOfEuroDay = 5.45;
+
+    let resultadoDolarParaReal = valueOfInput.value / valueDolarDay;
+    let resultadoDolarEuroParaReal =  valueOfInput.value / valueOfEuroDay;
 
 
-  
- 
-  
-  console.log("valor do input " + valueOfInput.value);
-  console.log("Valor do seletor " + selectionOfEuroDolar);
-  console.log("cotação do dolar para real brasileiro " + valueDolarDay);
-  console.log("valor convertido de real para dolar  " + resultadoDolarParaReal);
-
-
-  if (selectionOfEuroDolar === "dolar") { 
-
-    valueScreenBr.innerHTML = new Intl.NumberFormat("pt-br", {
-      style: "currency",
-      currency: "BRL"
-    }).format(resultadoDolarParaReal)
+    valueScreenBr.textContent = valueOfInput.value;
 
 
 
 
-  }
-  if (selectionOfEuroDolar == "euro") {
 
-    valueScreenBr.innerHTML = new Intl.NumberFormat("de-DE", {
-      style: "currency",
-      currency: "EUR"
-    }).format(valueOfInput / valueEuroDay);
+    // new Intl.NumberFormat( "String lingua" ,Objeto estiloTipoMoeda ).format() : void
 
 
 
-  }
 
- 
+
+    console.log("valor do input " + valueOfInput.value);
+    console.log("Valor do seletor " + selectionOfEuroDolar);
+    console.log("cotação do dolar para real brasileiro " + valueDolarDay);
+    console.log("valor convertido de real para dolar  " + resultadoDolarParaReal);
+    console.log("Valalor exibido na imagem do brasil " + valueScreenBr.value);
+    console.log("Resultado dolar euro para real " + resultadoDolarEuroParaReal);    
+
+
+    if (selectionOfEuroDolar === "dolar") {
+
+        valueScreenDolar.innerHTML = new Intl.NumberFormat("pt-br", {
+            style: "currency",
+            currency: "BRL"
+        }).format(resultadoDolarParaReal)
+
+
+
+
+    }
+    if (selectionOfEuroDolar == "euro") {
+
+        valueScreenDolar.innerHTML = new Intl.NumberFormat("de-DE", {
+            style: "currency",
+            currency: "EUR"
+        }).format(resultadoDolarEuroParaReal);
+
+
+
+    }
+
+
 
 
 
