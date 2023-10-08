@@ -30,7 +30,7 @@ function convertValues() {
   // precisamos criar essas duas variaveis  para depois no codigo não ficar confuso
   let valueDolarDay = 5.17;
   let valueOfEuroDay = 5.45;
-  
+
   // faz o calculo referente de conversao de dolar para real
   let convertRealToDodar = valueOfInput.value / valueDolarDay;
 
@@ -55,7 +55,8 @@ function convertValues() {
   // todo valor capturado pelo input é calculado e exibe esse resultado na imagem do dolar
   if (selectionOfEuroDolar === "dolar") {
 
-    valueScreenDolar.innerHTML = convertIntoForeignCurrency( "BRL" , "pt-br" , convertRealToDodar);
+    valueScreenDolar.innerHTML =
+      convertIntoForeignCurrency("USD", "en-US", convertRealToDodar);
 
   }
   if (selectionOfEuroDolar === "euro") {
@@ -69,23 +70,19 @@ function convertValues() {
 
 
 function convertIntoForeignCurrency(currency, language, value) {
-  const numberFormat = new Intl.NumberFormat(language);
-
-  const monetaryValue = currency;
-
-  const formattedCurrency = numberFormat.format(value,
-    {
-      style: "currency",
-      currency: monetaryValue
-
-    }
-
-  );
-
-  return formattedCurrency;
 
 
+  const ocorrency = currency;
+
+  const fotmatedValue = new Intl.NumberFormat(language, {
+    style: "currency",
+    currency: ocorrency
+  }).format(value);
+
+  return fotmatedValue;
 }
+
+
 
 convertButton.addEventListener("click", convertValues);
 
