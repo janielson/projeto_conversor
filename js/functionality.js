@@ -61,10 +61,9 @@ function convertValues() {
   }
   if (selectionOfEuroDolar === "euro") {
 
-    valueScreenDolar.innerHTML = new Intl.NumberFormat("de-DE", {
-      style: "currency",
-      currency: "EUR"
-    }).format(convertRealToEuro);
+    valueScreenDolar.innerHTML =
+      convertIntoForeignCurrency("EUR", "de-DE", convertRealToEuro);
+
   }
 }
 
