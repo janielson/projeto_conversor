@@ -45,12 +45,12 @@ function convertValues() {
 
   // esses console.log sao de teste para ser exibido no terminal
 
-  console.log("valor do input " + valueOfInput.value);
-  console.log("Valor do seletor " + selectionOfEuroDolar);
-  console.log("cotação do dolar para real brasileiro " + valueDolarDay);
-  console.log("valor convertido de real para dolar  " + convertRealToDodar);
-  console.log("Valalor exibido na imagem do brasil " + valueScreenBr.value);
-  console.log("Resultado dolar euro para real " + convertRealToEuro);
+  //console.log("valor do input " + valueOfInput.value);
+  //console.log("Valor do seletor " + selectionOfEuroDolar);
+  //console.log("cotação do dolar para real brasileiro " + valueDolarDay);
+  //console.log("valor convertido de real para dolar  " + convertRealToDodar);
+ // console.log("Valalor exibido na imagem do brasil " + valueScreenBr.value);
+  //console.log("Resultado dolar euro para real " + convertRealToEuro);
 
   // todo valor capturado pelo input é calculado e exibe esse resultado na imagem do dolar
   if (selectionOfEuroDolar === "dolar") {
@@ -65,6 +65,9 @@ function convertValues() {
       convertIntoForeignCurrency("EUR", "de-DE", convertRealToEuro);
 
   }
+
+
+
 }
 
 
