@@ -15,7 +15,19 @@ let valueOfInput = document.querySelector(".entrada");
 
 
 function convertValues() {
+  let textoAlerta = document.querySelector(".texto-alerta");
+  
 
+  if (isNaN(valueOfInput.value)) {
+  
+
+   
+    textoAlerta.textContent = "Voce so pode digitar numeros"
+    return false; 
+
+  }
+  
+  textoAlerta.textContent = "";
 
   // o o seletor do select option deve ficar dentro da função
   let selectionOfEuroDolar = document.querySelector(".box_select_two").value;
