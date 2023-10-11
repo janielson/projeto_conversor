@@ -4,77 +4,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="/estilos/reset.css">
-    <link rel="stylesheet" href="/estilos/styles.css">
-    <title>CONVERSOR</title>
+    <link rel="stylesheet" href="./styles.cssq">
+    <title> CONVERSOR DE VALOR </title>
 </head>
 
 <body>
-    <main class="content-prinpal">
-        <div class="content_grip">
-            <div class="caixa-principal">
-                <!-- <img class="logo_marca" src="/assets/logo.gif" alt=""> -->
-                <section class="content_value">
-                    <div class="name_convert">
-                        converter <b> de </b>
-                        <select class="box_select_one">
-                            <option> R$ Real Brasileiro </option>
-                        </select>
-
-                    </div>
-
-                    <div class="name_convert">
-                        Converter <b>para</b>
-                        <select class="box_select_two">
-                            <option value="euro"> € EURO </option>
-                            <option value="dolar">US$ DOLAR AMERICANO </option>
-
-                        </select>   
-
-                    </div>
-
-                    </label>
-
-                    <label>valor
-                        <input class="entrada" type="number"   placeholder="digite um valor">
-                    </label>
-
-                    <button class="button_convert_money"> CONVERTER </button>
-
-                      
-
-                </section>
+    <img src="./assets/logo.gif" alt="">
+    <main>
+        <label> converter <b>de</b>
+            <select>
+                <option value=""> R$ REAL BRASILEIRO</option>
+            </select>
+        </label>
 
 
-                <section class="content_value_screen">
-                    <div class="content_convert_moneys_screen">
-                        <img src="/assets/brasil 2.png" alt="">
-                        <p> REAL </p>
-                        <P class="valuerealbr"> R$ 0.00 </P>
+        <label> converter <b>para</b>
+            <select>
+                <option value=""> US$ DOLAR AMERICANO</option>
+                <option value=""> BTC BITCOIN</option>
+                <option value=""> € EURO </option>
+                <option value=""> £ LIBRA </option>
+            </select>
 
+        </label>
 
-                    </div>
-                    <img class="img_arrow" src="./assets/arrow.png" alt="">
-                    <div class="content_convert_moneys_screen">
-                        <img src="/assets/estados-unidos (1) 1.png" alt="">
-                        <p> DÓLAR AMERICANO </p>
-                        <p class="valueamerican"> US$ 0.00 </p>
+        <label>  valor 
+            <input type="number" placeholder="digite um valor">
+        </label>
 
-                    </div>
+        <button> CONVERTER </button>
 
-                </section>
-
+        <section>
+            <div>
+                <img src="./assets/brasil.png" alt=" real brasileiro">
+                <p>REAL</p>
+                <p>R$ 0,00 </p>
             </div>
-
-        </div>
+              <img src="./assets/arrow.png" alt="">
+            <div>
+                <img src="./assets/estados-unidos (1) 1.png" alt=" real brasileiro">
+                <p>US$ DOLAR AMERICANO</p>
+                <p> R$ 0,00 </p>
+            </div>
+    
+        </section>
+    
 
     </main>
-    <script src="/js/functionality.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
+
+   
     
 </body>
 
