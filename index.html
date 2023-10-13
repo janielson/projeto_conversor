@@ -4,26 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles.cssq">
+    <link rel="stylesheet" href="./styles.css">
     <title> CONVERSOR DE VALOR </title>
 </head>
 
 <body>
-    <main class="content-prinpal">
-        <div class="content_grip">
-            <div class="caixa-principal">
-                <!-- <img class="logo_marca" src="/assets/logo.gif" alt=""> -->
-                <section class="content_value">
-                    <div class="name_convert">
-                        converter <b> de </b>
-                        <select class="box_select_one">
-                            <option> R$ Real Brasileiro </option>
-                        </select>
-
-                    </div>
+    <img class="img_logo" src="./assets/logo.gif" alt=" imagem_logo">
+    <main>
 
 
-        <label> converter <b>para</b>
+        <label> converter <b> de </b>
+            <select class="box_select_one">
+                <option> R$ Real Brasileiro </option>
+            </select>
+        </label>
+
+
+        <label> converter <b> para </b>
             <select>
                 <option value=""> US$ DOLAR AMERICANO</option>
                 <option value=""> BTC BITCOIN</option>
@@ -33,32 +30,34 @@
 
         </label>
 
-                    <label>valor
-                        <input class="entrada" type="number"   placeholder="digite um valor">
-                    </label>
+        <label>valor
+            <input type="number" placeholder="digite um valor">
+        </label>
 
         <button> CONVERTER </button>
 
         <section>
-            <div>
+            <div class="currency_box">
                 <img src="./assets/brasil.png" alt=" real brasileiro">
-                <p>REAL</p>
-                <p>R$ 0,00 </p>
-            </div>
-              <img src="./assets/arrow.png" alt="">
-            <div>
+                <p class="currency">REAL</p>
+                <p class="currency_value">R$ 0,00 </p>
+            </div> 
+
+            <img class="arrow" src="./assets/arrow.png" alt="">
+
+            <div class="currency_box">
                 <img src="./assets/estados-unidos (1) 1.png" alt=" real brasileiro">
-                <p>US$ DOLAR AMERICANO</p>
-                <p> R$ 0,00 </p>
+                <p class="currency">US$ DOLAR AMERICANO</p>
+                <p class="currency_value"> R$ 0,00 </p>
             </div>
-    
+
         </section>
-    
+
 
     </main>
 
-   
-    
+
+
 </body>
 
 </html>
