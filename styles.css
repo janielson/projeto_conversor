@@ -1,17 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-*{
+* {
 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    outline:none;
+    outline: none;
     font-family: 'Roboto', sans-serif;
 
 }
 
 
-:root{
+:root {
     --cor-roxa: #772FD3;
     --cor-cinza: #BBBBBB;
     --cor-cinza-escuro: #777777;
@@ -24,15 +24,16 @@
 }
 
 
-.img_logo{
+.img_logo {
     display: none;
 }
 
-main{
+main {
     width: 375px;
     background: #f4f4f4;
     border-radius: 20px;
-    padding: 44px 24px 23px;
+    padding: 33px 24px 23px;
+    margin: 50px auto ;
 }
 
 label {
@@ -43,7 +44,7 @@ label {
 
 }
 
-select, input{
+select,input {
     height: 48px;
     width: 100%;
     border: 1px solid var(--cor-cinza);
@@ -53,14 +54,14 @@ select, input{
     text-align: center;
     font-size: 16px;
     font-weight: 700;
-    color:  var(--cor-preto-claro);
-    
- 
+    color: var(--cor-preto-claro);
+
+
 }
 
 
 
-button{
+button {
     height: 48px;
     width: 100%;
     border-radius: 5px;
@@ -71,12 +72,12 @@ button{
     color: var(--cor-banco);
 }
 
-button:hover{
-      opacity: 0.8;
+button:hover {
+    opacity: 0.8;
 
 }
 
-section{
+section {
     border: 1px solid var(--cor-roxa);
     border-radius: 20px;
     margin-top: 36px;
@@ -89,11 +90,11 @@ section{
 }
 
 
-.arrow{
+.arrow {
     margin: 15px 0;
 }
 
-.currency_box{
+.currency_box {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -101,13 +102,41 @@ section{
 }
 
 
-.currency{
+.currency {
     font-size: 14px;
     color: var(--cor-cinza-escuro);
 }
 
-.currency_value{
+.currency_value, .currency_value_to_convert {
     font-size: 20px;
     font-weight: 700;
-    color:var(--cor-preto-claro)
+    color: var(--cor-preto-claro)
+}
+
+
+@media screen and (min-width: 1366px) {
+
+    body {
+        background-color: #772FD3;
+    }
+
+    .img_logo {
+        display: block;
+        height: 200px;
+        margin: 24px auto 0px;
+        border-radius: 50px 0px;
+
+    }
+
+   
+    label{
+        font-size: 18px;
+    }
+
+
+    
+
+        
+
+
 }
