@@ -2,11 +2,60 @@
 // aqui chamo os meus principais recursos para poder fazer a logica da minha aplicação 
 const convertButton = document.querySelector(".convert_button");
 const selectPrime = document.querySelector(".box_select_one");
+const selectSecundary = document.querySelector(".box_select_two");
+const text1 = document.querySelector(".currency");
+const text2 = document.getElementById("name_currency");
+
 
 
 
 // aqui são os eventos junto com a duas funçoes da minha aplicação. um evento de "click" e outro de troca "change"
 convertButton.addEventListener("click", convertCurrency);
+selectPrime.addEventListener('change' , trocaImagem1 );
+selectSecundary.addEventListener('change' , trocaImagem2 );
+
+
+
+function trocaImagem1() {
+   const imagem1 = document.querySelector(".img_convert");
+  
+    if(selectPrime.value == "real") {
+        imagem1.src = "./assets/brasil.png";
+    } else if (selectPrime.value == "dolar" ) {
+           imagem1.src = "./assets/estados-unidos.png";
+    } else if(selectPrime.value == "euro" ) {
+          imagem1.src = "./assets/euro.png";
+ 
+    } else if(selectPrime.value == "libra") {
+           imagem1.src = "./assets/libra.png";
+
+    } else if (selectPrime.value == "bitcoin") {
+            imagem1.src = "./assets/bitcoin.png";
+
+    }
+    
+}
+
+function trocaImagem2() {
+   const imagem1 = document.querySelector(".img_convert");
+  
+    if(selectPrime.value == "real") {
+        imagem1.src = "./assets/brasil.png";
+    } else if (selectPrime.value == "dolar" ) {
+           imagem1.src = "./assets/estados-unidos.png";
+    } else if(selectPrime.value == "euro" ) {
+          imagem1.src = "./assets/euro.png";
+ 
+    } else if(selectPrime.value == "libra") {
+           imagem1.src = "./assets/libra.png";
+
+    } else if (selectPrime.value == "bitcoin") {
+            imagem1.src = "./assets/bitcoin.png";
+
+    }
+    
+}
+
 
 
 
