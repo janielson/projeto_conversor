@@ -5,52 +5,147 @@ const selectPrime = document.querySelector(".box_select_one");
 const selectSecundary = document.querySelector(".box_select_two");
 const text1 = document.querySelector(".currency");
 const text2 = document.getElementById("name_currency");
-
+const value1 = document.querySelector(".currency_value_to_convert");
+const value2 = document.querySelector(".currency_value");
 
 
 
 // aqui são os eventos junto com a duas funçoes da minha aplicação. um evento de "click" e outro de troca "change"
 convertButton.addEventListener("click", convertCurrency);
-selectPrime.addEventListener('change' , trocaImagem1 );
-selectSecundary.addEventListener('change' , trocaImagem2 );
+selectPrime.addEventListener('change' , trocaImagemETexto1 );
+selectSecundary.addEventListener('change' , trocaImagemETexto2 );
 
 
 
-function trocaImagem1() {
+function trocaImagemETexto1() {
    const imagem1 = document.querySelector(".img_convert");
   
     if(selectPrime.value == "real") {
         imagem1.src = "./assets/brasil.png";
+        text1.innerHTML = "Real";
+
+   //  alterar aqui
+
+   value1.innerHTML = new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD"
+   }).format(0.00); 
+
     } else if (selectPrime.value == "dolar" ) {
            imagem1.src = "./assets/estados-unidos.png";
+           text1.innerHTML = "Dolar";
+         
+           
+      value1.innerHTML = new Intl.NumberFormat("en-US", {
+         style: "currency",
+         currency: "USD"
+      }).format(0.00);
+
+
     } else if(selectPrime.value == "euro" ) {
           imagem1.src = "./assets/euro.png";
+          text1.innerHTML = "Euro";
+   
+         
+          value1.innerHTML = new Intl.NumberFormat("de-DE", {
+            style: "currency",
+            currency: "EUR"
+         }).format(0.00);
+         
+
  
     } else if(selectPrime.value == "libra") {
            imagem1.src = "./assets/libra.png";
+           text1.innerHTML = "Libra";
+
+
+           //  alterar aqui
+
+   value1.innerHTML = new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD"
+   }).format(0.00); 
+
 
     } else if (selectPrime.value == "bitcoin") {
             imagem1.src = "./assets/bitcoin.png";
+            text1.innerHTML = "Bitcoin";
+
+            //  alterar aqui
+
+   value1.innerHTML = new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD"
+   }).format(0.00); 
+
 
     }
     
 }
 
-function trocaImagem2() {
-   const imagem1 = document.querySelector(".img_convert");
+function trocaImagemETexto2() {
+   const imagem2 = document.querySelector(".img_converted");
   
-    if(selectPrime.value == "real") {
-        imagem1.src = "./assets/brasil.png";
-    } else if (selectPrime.value == "dolar" ) {
-           imagem1.src = "./assets/estados-unidos.png";
-    } else if(selectPrime.value == "euro" ) {
-          imagem1.src = "./assets/euro.png";
- 
-    } else if(selectPrime.value == "libra") {
-           imagem1.src = "./assets/libra.png";
+    if(selectSecundary.value == "real") {
+        imagem2.src = "./assets/brasil.png";
+        text2.innerHTML = "Real";
+        
 
-    } else if (selectPrime.value == "bitcoin") {
-            imagem1.src = "./assets/bitcoin.png";
+        //  alterar aqui
+
+   value2.innerHTML = new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD"
+   }).format(0.00); 
+
+
+    } else if (selectSecundary.value == "dolar" ) {
+           imagem2.src = "./assets/estados-unidos.png";
+           text2.innerHTML = "Dolar";
+
+                 //  alterar aqui
+
+   value2.innerHTML = new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD"
+   }).format(0.00); 
+
+    } else if(selectSecundary.value == "euro" ) {
+          imagem2.src = "./assets/euro.png";
+          text2.innerHTML = "Euro";
+          
+
+                //  alterar aqui
+
+   value2.innerHTML = new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD"
+   }).format(0.00); 
+
+ 
+    } else if(selectSecundary.value == "libra") {
+           imagem2.src = "./assets/libra.png";
+           text2.innerHTML = "Libra";
+
+                 //  alterar aqui
+
+   value2.innerHTML = new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD"
+   }).format(0.00); 
+           
+    } else if (selectSecundary.value == "bitcoin") {
+            imagem2.src = "./assets/bitcoin.png";
+            text2.innerHTML = "Bitcoin";
+
+
+                  //  alterar aqui
+
+   value2.innerHTML = new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD"
+   }).format(0.00); 
+
 
     }
     
@@ -65,7 +160,7 @@ function convertCurrency() {
 
 
 
-   const primeiroSeletor = document.querySelector(".box_select_one").value
+   const primeiroSeletor = document.querySelector(".box_select_one").value 
    const imagemDeTroca = document.querySelector(".img_converted");
    const segundoSeletor = document.querySelector(".box_select_two").value;
 
