@@ -194,7 +194,7 @@ function convertCurrency() {
 
    if (primeiroSeletor == "real" && segundoSeletor == "dolar") {// va
 
-   
+      // alterar a valorExibidoSecundario  para value2
       valorExibidoSecundario.innerHTML = new Intl.NumberFormat("en-US", {
          style: "currency",
          currency: "USD"
@@ -205,15 +205,16 @@ function convertCurrency() {
    } else if (primeiroSeletor == "real" && segundoSeletor == "bitcoin") {
 
       
-
-      valorExibidoSecundario.innerHTML = new Intl.NumberFormat("de-DE").format(conversaoDeRealParaBitcoin);
+          // alterar a valorExibidoSecundario  para value2
+      valorExibidoSecundario.innerHTML =
+        new Intl.NumberFormat("de-DE").format(conversaoDeRealParaBitcoin);
 
       modeloDaMoeda.innerHTML = "µBTC BITCOIN"
       imagemDeTroca.src = "./assets/bitcoin.png";
 
    } else if (primeiroSeletor == "real" && segundoSeletor == "euro") {
 
-      
+          // alterar a valorExibidoSecundario  para value2
       valorExibidoSecundario.innerHTML = new Intl.NumberFormat("de-DE", {
          style: "currency",
          currency: "EUR"
@@ -223,7 +224,8 @@ function convertCurrency() {
       imagemDeTroca.src = "./assets/euro.png"
 
    } else if (primeiroSeletor == "real" && segundoSeletor == "libra") {
-      
+   
+          // alterar a valorExibidoSecundario  para value2
       valorExibidoSecundario.innerHTML = new Intl.NumberFormat("en-GB", {
          style: "currency",
          currency: "GBP"
@@ -235,7 +237,7 @@ function convertCurrency() {
    } else if (primeiroSeletor == "real" && segundoSeletor == "real") {
 
      
-
+          // alterar a valorExibidoSecundario  para value2
       valorExibidoSecundario.innerHTML = new Intl.NumberFormat("pt-BR", {
          style: "currency",
          currency: "BRL"
