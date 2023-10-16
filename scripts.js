@@ -26,9 +26,9 @@ function trocaImagemETexto1() {
 
    //  alterar aqui
 
-   value1.innerHTML = new Intl.NumberFormat("en-US", {
+   value1.innerHTML = new Intl.NumberFormat("pt-BR", {
       style: "currency",
-      currency: "USD"
+      currency: "BRL"
    }).format(0.00); 
 
     } else if (selectPrime.value == "dolar" ) {
@@ -61,9 +61,9 @@ function trocaImagemETexto1() {
 
            //  alterar aqui
 
-   value1.innerHTML = new Intl.NumberFormat("en-US", {
+   value1.innerHTML = new Intl.NumberFormat("en-GB", {
       style: "currency",
-      currency: "USD"
+      currency: "GBP"
    }).format(0.00); 
 
 
@@ -75,11 +75,14 @@ function trocaImagemETexto1() {
 
    value1.innerHTML = new Intl.NumberFormat("en-US", {
       style: "currency",
-      currency: "USD"
+      currency: "BTC"
    }).format(0.00); 
 
 
     }
+
+
+    convertCurrency() 
     
 }
 
@@ -166,10 +169,10 @@ function convertCurrency() {
 
    // responsavel pelo calculo
    const valorDoImput = document.querySelector(".input_values").value;
-   let valorExibidoPrimario = document.querySelector(".currency_value_to_convert");
+   const valorExibidoPrimario = document.querySelector(".currency_value_to_convert");
 
    // valor exibido no final dos calculos
-   let valorExibidoSecundario = document.querySelector(".currency_value");
+   const valorExibidoSecundario = document.querySelector(".currency_value");
 
   const modeloDaMoeda = document.getElementById("name_currency")
 
@@ -207,7 +210,11 @@ function convertCurrency() {
       
           // alterar a valorExibidoSecundario  para value2
       valorExibidoSecundario.innerHTML =
-        new Intl.NumberFormat("de-DE").format(conversaoDeRealParaBitcoin);
+        new Intl.NumberFormat("en-US",{
+         style: "currency",
+         currency:"BTC"
+
+        }).format(conversaoDeRealParaBitcoin);
 
       modeloDaMoeda.innerHTML = "µBTC BITCOIN"
       imagemDeTroca.src = "./assets/bitcoin.png";
