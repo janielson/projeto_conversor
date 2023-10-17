@@ -5,12 +5,8 @@ const selectPrime = document.querySelector(".box_select_one");
 const selectSecundary = document.querySelector(".box_select_two");
 
 
-
-
-
-
 // aqui são os eventos junto com a duas funçoes da minha aplicação. um evento de "click" e outro de troca "change"
-convertButton.addEventListener("click", convertCurrencyReal);
+convertButton.addEventListener("click", main);
 selectPrime.addEventListener('change', selectorPrimary);
 selectSecundary.addEventListener('change', selectorSecundary);
 
@@ -162,82 +158,9 @@ function selectorSecundary() {
 }
 
 
-function convertReal() {
-   const value1 = document.querySelector(".currency_value_to_convert");
-   const value2 = document.querySelector(".currency_value");
-
-   const firstSelector = document.querySelector(".box_select_one").value
-   const secondSelector = document.querySelector(".box_select_two").value;
-   // input do do valor
-   const inputValue = document.querySelector(".input_values").value;
-
-   // vai ser alterados nas outras funçoes
-   value1.innerHTML = inputValue;
-
-   // variaveis de conversao
-   const dollarOfTheDay = 5.05;
-   const euroOfTheDay = 0.19;
-   const bitcoinOfTheDay = 0.0000072;
-   const libraOfTheDay = 0.16;
-
-   // isso sera alterado 
-   let conversionRealToDollar = inputValue / dollarOfTheDay;
-   let conversionRealToEuro = inputValue * euroOfTheDay;
 
 
-   // O BITCOIN ESTA CONVERTENDO SIM É QUE O NUMERO DE CASAS DECIMAIS DELE É MUITO GRANDE
-   let conversionRealToBitcoin = inputValue * bitcoinOfTheDay;
-   let conversionRealToLibraExterlina = inputValue / libraOfTheDay;
-
-   if (firstSelector == "real" && secondSelector == "dolar") {
-
-      value2.innerHTML = new Intl.NumberFormat("en-US", {
-         style: "currency",
-         currency: "USD"
-      }).format(conversionRealToDollar);
-
-
-      // DEVE EXIBIR MAIS CASAS DECIMAIS
-   } else if (firstSelector == "real" && secondSelector == "bitcoin") {
-
-      value2.innerHTML = new Intl.NumberFormat("en-US", {
-         style: "currency",
-         currency: "BTC"
-      }).format(conversionRealToBitcoin);
-
-
-   } else if (firstSelector == "real" && secondSelector == "euro") {
-
-      value2.innerHTML = new Intl.NumberFormat("de-DE", {
-         style: "currency",
-         currency: "EUR"
-      }).format(conversionRealToEuro);
-
-
-
-   } else if (firstSelector == "real" && secondSelector == "libra") {
-
-      value2.innerHTML = new Intl.NumberFormat("en-GB", {
-         style: "currency",
-         currency: "GBP"
-      }).format(conversionRealToLibraExterlina);
-
-
-
-   } else if (firstSelector == "real" && secondSelector == "real") {
-
-      value2.innerHTML = new Intl.NumberFormat("pt-BR", {
-         style: "currency",
-         currency: "BRL"
-      }).format(inputValue);
-
-
-
-   }
-
-}
-
-function convertCurrencyReal() {
+function main() {
 
 
    convertReal();
@@ -323,6 +246,90 @@ function convertDolar() {
    }
 }
 
+function convertReal() {
+   const value1 = document.querySelector(".currency_value_to_convert");
+   const value2 = document.querySelector(".currency_value");
+
+   const firstSelector = document.querySelector(".box_select_one").value
+   const secondSelector = document.querySelector(".box_select_two").value;
+   // input do do valor
+   const inputValue = document.querySelector(".input_values").value;
+
+   // vai ser alterados nas outras funçoes
+   value1.innerHTML = inputValue;
+
+   // variaveis de conversao
+   const dollarOfTheDay = 5.05;
+   const euroOfTheDay = 0.19;
+   const bitcoinOfTheDay = 0.0000072;
+   const libraOfTheDay = 0.16;
+
+   // isso sera alterado 
+   let conversionRealToDollar = inputValue / dollarOfTheDay;
+   let conversionRealToEuro = inputValue * euroOfTheDay;
+
+
+   // O BITCOIN ESTA CONVERTENDO SIM É QUE O NUMERO DE CASAS DECIMAIS DELE É MUITO GRANDE
+   let conversionRealToBitcoin = inputValue * bitcoinOfTheDay;
+   let conversionRealToLibraExterlina = inputValue / libraOfTheDay;
+
+   if (firstSelector == "real" && secondSelector == "dolar") {
+
+      value2.innerHTML = new Intl.NumberFormat("en-US", {
+         style: "currency",
+         currency: "USD"
+      }).format(conversionRealToDollar);
+
+
+      // CODIGO CORRIGIDO
+   } else if (firstSelector == "real" && secondSelector == "bitcoin") {
+
+
+      value2.innerHTML = new Intl.NumberFormat("pt-BR", {
+         style: "currency",
+         currency: "BTC",
+
+         minimumFractionDigits: 4,
+         maximumFractionDigits: 10
+
+      }).format(conversionRealToBitcoin);
+
+      console.log(value2);
+      console.log(conversionRealToBitcoin);
+
+
+
+
+   } else if (firstSelector == "real" && secondSelector == "euro") {
+
+      value2.innerHTML = new Intl.NumberFormat("de-DE", {
+         style: "currency",
+         currency: "EUR"
+      }).format(conversionRealToEuro);
+
+
+
+   } else if (firstSelector == "real" && secondSelector == "libra") {
+
+      value2.innerHTML = new Intl.NumberFormat("en-GB", {
+         style: "currency",
+         currency: "GBP"
+      }).format(conversionRealToLibraExterlina);
+
+
+
+   } else if (firstSelector == "real" && secondSelector == "real") {
+
+      value2.innerHTML = new Intl.NumberFormat("pt-BR", {
+         style: "currency",
+         currency: "BRL"
+      }).format(inputValue);
+
+
+
+   }
+
+}
 
 function convertEuro() {
    const value1 = document.querySelector(".currency_value_to_convert");
