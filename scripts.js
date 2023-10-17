@@ -3,23 +3,24 @@
 const convertButton = document.querySelector(".convert_button");
 const selectPrime = document.querySelector(".box_select_one");
 const selectSecundary = document.querySelector(".box_select_two");
-const text1 = document.querySelector(".currency");
-const text2 = document.getElementById("name_currency");
-const value1 = document.querySelector(".currency_value_to_convert");
-const value2 = document.querySelector(".currency_value");
+
+
+
 
 
 
 // aqui são os eventos junto com a duas funçoes da minha aplicação. um evento de "click" e outro de troca "change"
 convertButton.addEventListener("click", convertCurrencyReal);
 selectPrime.addEventListener('change', selectorPrimary);
-selectSecundary.addEventListener('change',  selectorSecundary);
+selectSecundary.addEventListener('change', selectorSecundary);
 
 
 // troca a imagem , troca o texto , troca o tipo de moeda
-function  selectorPrimary() {
+function selectorPrimary() {
    const imagem1 = document.querySelector(".img_convert");
-   const valorDoImput = document.querySelector(".input_values").value;
+   const text1 = document.querySelector(".currency");
+   const selectPrime = document.querySelector(".box_select_one");
+
 
    if (selectPrime.value == "real") {
       imagem1.src = "./assets/brasil.png";
@@ -88,6 +89,8 @@ function  selectorPrimary() {
 // troca a imagem , troca o texto , troca o tipo de moeda
 function selectorSecundary() {
    const imagem2 = document.querySelector(".img_converted");
+   const text2 = document.getElementById("name_currency");
+   const selectSecundary = document.querySelector(".box_select_two");
 
    if (selectSecundary.value == "real") {
       imagem2.src = "./assets/brasil.png";
@@ -159,15 +162,15 @@ function selectorSecundary() {
 
 
 
-
-
-function convertCurrencyReal() {
+function convertReal() {
+   const value1 = document.querySelector(".currency_value_to_convert");
+   const value2 = document.querySelector(".currency_value");
 
    const primeiroSeletor = document.querySelector(".box_select_one").value
    const segundoSeletor = document.querySelector(".box_select_two").value;
    // input do do valor
-   const valorDoImput = document.querySelector(".input_values").value; 
-   
+   const valorDoImput = document.querySelector(".input_values").value;
+
    // vai ser alterados nas outras funçoes
    value1.innerHTML = valorDoImput;
 
@@ -177,34 +180,31 @@ function convertCurrencyReal() {
    const bitcoinDoDia = 0.0000072;
    const libraDoDia = 0.16;
 
-
    // isso sera alterado 
-   let conversaoRealParaDolar = valorDoImput / dolarDoDia;
+   let conversaoRealParaDolar  = valorDoImput / dolarDoDia;
    let conversaoDeRealParaEuro = valorDoImput * euroDoDia;
+
+
+   // O BITCOIN ESTA CONVERTENDO SIM É QUE O NUMERO DE CASAS DECIMAIS DELE É MUITO GRANDE
    let conversaoDeRealParaBitcoin = valorDoImput * bitcoinDoDia;
    let conversaoRealParaLibraExterlina = valorDoImput / libraDoDia;
 
-   if (primeiroSeletor == "real" && segundoSeletor == "dolar") {// va
+   if (primeiroSeletor == "real" && segundoSeletor == "dolar") {
 
       value2.innerHTML = new Intl.NumberFormat("en-US", {
          style: "currency",
          currency: "USD"
       }).format(conversaoRealParaDolar);
 
-     
 
+      // DEVE EXIBIR MAIS CASAS DECIMAIS
    } else if (primeiroSeletor == "real" && segundoSeletor == "bitcoin") {
-
-
-      value2.innerHTML =
-         new Intl.NumberFormat("en-US", {
-            style: "currency",
-            currency: "BTC"
-
-         }).format(conversaoDeRealParaBitcoin);
-
+     
+         value2.innerHTML = new Intl.NumberFormat("en-US", {
+         style: "currency",   
+         currency: "BTC"
+      }).format(conversaoDeRealParaBitcoin);
    
-  
 
    } else if (primeiroSeletor == "real" && segundoSeletor == "euro") {
 
@@ -213,7 +213,7 @@ function convertCurrencyReal() {
          currency: "EUR"
       }).format(conversaoDeRealParaEuro);
 
-     
+
 
    } else if (primeiroSeletor == "real" && segundoSeletor == "libra") {
 
@@ -222,8 +222,8 @@ function convertCurrencyReal() {
          currency: "GBP"
       }).format(conversaoRealParaLibraExterlina);
 
-   
-    
+
+
    } else if (primeiroSeletor == "real" && segundoSeletor == "real") {
 
       value2.innerHTML = new Intl.NumberFormat("pt-BR", {
@@ -235,10 +235,15 @@ function convertCurrencyReal() {
 
    }
 
+}
 
+function convertCurrencyReal() {
+
+
+   convertReal();
    convertDolar();
-   
-   
+
+
 
 }
 
@@ -247,33 +252,73 @@ function convertcurrencyDolar() {
 }
 
 function convertDolar() {
-    
+
+   const value1 = document.querySelector(".currency_value_to_convert");
+   const value2 = document.querySelector(".currency_value");
+
+   const primeiroSeletor = document.querySelector(".box_select_one").value
+   const segundoSeletor = document.querySelector(".box_select_two").value;
+   // input do do valor
+   const valorDoImput = document.querySelector(".input_values").value;
+
+   // vai ser alterados nas outras funçoes
+   value1.innerHTML = valorDoImput;
+
    // variaveis de conversao
    const dolarDoDia = 5.05;
    const euroDoDia = 0.19;
    const bitcoinDoDia = 0.0000072;
    const libraDoDia = 0.16;
 
-   const valorReal = 5.04;
-
-   const primeiroSeletor = document.querySelector(".box_select_one").value
-   const conversaoDolarParaReal = valorReal * value1.innerHTML;
-   const segundoSeletor = document.querySelector(".box_select_two").value;
-     
    // isso sera alterado 
-  // let conversaoRealParaDolar = valorDoImput / dolarDoDia;
-  // let conversaoDeRealParaEuro = valorDoImput * euroDoDia;
-  // let conversaoDeRealParaBitcoin = valorDoImput * bitcoinDoDia;
-  // let conversaoRealParaLibraExterlina = valorDoImput / libraDoDia;
+   let conversaoDolarParaDolar  = valorDoImput;
+   let conversaoDoDolarlParaEuro = valorDoImput * euroDoDia;
+   let conversaodoDolarParaBitcoin = valorDoImput / bitcoinDoDia;
+   let conversaoDolarParaLibraExterlina = valorDoImput * libraDoDia;
 
-   if (primeiroSeletor == "dolar" && segundoSeletor == "real") {// va
+   if (primeiroSeletor == "dolar" && segundoSeletor == "dolar") {
+
+      value2.innerHTML = new Intl.NumberFormat("en-US", {
+         style: "currency",
+         currency: "USD"
+      }).format(conversaoRealParaDolar);
+
+
+      // DEVE EXIBIR MAIS CASAS DECIMAIS
+   } else if (primeiroSeletor == "dolar" && segundoSeletor == "bitcoin") {
+     
+         value2.innerHTML = new Intl.NumberFormat("en-US", {
+         style: "currency",   
+         currency: "BTC"
+      }).format(conversaoDeRealParaBitcoin);
+   
+
+   } else if (primeiroSeletor == "dolar" && segundoSeletor == "euro") {
+
+      value2.innerHTML = new Intl.NumberFormat("de-DE", {
+         style: "currency",
+         currency: "EUR"
+      }).format(conversaoDeRealParaEuro);
+
+
+
+   } else if (primeiroSeletor == "dolar" && segundoSeletor == "libra") {
+
+      value2.innerHTML = new Intl.NumberFormat("en-GB", {
+         style: "currency",
+         currency: "GBP"
+      }).format(conversaoRealParaLibraExterlina);
+
+
+
+   } else if (primeiroSeletor == "dolar" && segundoSeletor == "real") {
 
       value2.innerHTML = new Intl.NumberFormat("pt-BR", {
          style: "currency",
          currency: "BRL"
-      }).format(conversaoDolarParaReal);
+      }).format(valorDoImput);
 
-     
 
-   } 
+
+   }
 }
