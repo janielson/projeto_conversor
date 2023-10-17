@@ -188,7 +188,7 @@ function convertDolar() {
    // variaveis de conversao
 
    const euroOfTheDay = 0.95;
-   const bitcoinDoDia = 0.0000072;
+   const bitcointoDay = 0.000035057;
    const libraOfTheDay = 0.16;
    const realToDay = 5.05
 
@@ -196,7 +196,7 @@ function convertDolar() {
    let conversionDolarToDolar = inputValue;
    let conversionDolarToReal = inputValue * realToDay;
    let conversionDolarToEuro = inputValue * euroOfTheDay;
-   let conversionDolarToBitcoin = inputValue * bitcoinDoDia;
+   let conversionDolarToBitcoin = inputValue * bitcointoDay;
    let conversionDolarToLibraExterlina = inputValue * libraOfTheDay;
 
    if (firstSelector == "dolar" && secondSelector == "dolar") {
@@ -212,11 +212,13 @@ function convertDolar() {
 
       value2.innerHTML = new Intl.NumberFormat("en-US", {
          style: "currency",
-         currency: "BTC"
+         currency: "BTC",
+         minimumFractionDigits: 4,
+         maximumFractionDigits: 10
       }).format(conversionDolarToBitcoin);
 
 
-   } else if (firstSelector == "dolar" && secondSelector == "euro") {
+   } else if (firstSelector == "dolar" &&    secondSelector == "euro") {
 
       value2.innerHTML = new Intl.NumberFormat("de-DE", {
          style: "currency",
@@ -281,7 +283,7 @@ function convertReal() {
       }).format(conversionRealToDollar);
 
 
-      // CODIGO CORRIGIDO
+      // DEVE EXIBIR MAIS CASAS DECIMAIS
    } else if (firstSelector == "real" && secondSelector == "bitcoin") {
 
 
