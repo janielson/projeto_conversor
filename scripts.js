@@ -181,7 +181,7 @@ function convertReal() {
    const libraOfTheDay = 0.16;
 
    // isso sera alterado 
-   let conversionRealToDollar  = inputValue / dollarOfTheDay;
+   let conversionRealToDollar = inputValue / dollarOfTheDay;
    let conversionRealToEuro = inputValue * euroOfTheDay;
 
 
@@ -198,15 +198,15 @@ function convertReal() {
 
 
       // DEVE EXIBIR MAIS CASAS DECIMAIS
-   } else if (firstSelector == "real" && secondSelector  == "bitcoin") {
-     
-         value2.innerHTML = new Intl.NumberFormat("en-US", {
-         style: "currency",   
+   } else if (firstSelector == "real" && secondSelector == "bitcoin") {
+
+      value2.innerHTML = new Intl.NumberFormat("en-US", {
+         style: "currency",
          currency: "BTC"
       }).format(conversionRealToBitcoin);
-   
 
-   } else if (firstSelector == "real" && secondSelector  == "euro") {
+
+   } else if (firstSelector == "real" && secondSelector == "euro") {
 
       value2.innerHTML = new Intl.NumberFormat("de-DE", {
          style: "currency",
@@ -215,7 +215,7 @@ function convertReal() {
 
 
 
-   } else if (firstSelector == "real" && secondSelector  == "libra") {
+   } else if (firstSelector == "real" && secondSelector == "libra") {
 
       value2.innerHTML = new Intl.NumberFormat("en-GB", {
          style: "currency",
@@ -224,7 +224,7 @@ function convertReal() {
 
 
 
-   } else if (firstSelector == "real" && secondSelector  == "real") {
+   } else if (firstSelector == "real" && secondSelector == "real") {
 
       value2.innerHTML = new Intl.NumberFormat("pt-BR", {
          style: "currency",
@@ -267,14 +267,14 @@ function convertDolar() {
    const euroOfTheDay = 0.95;
    const bitcoinDoDia = 0.0000072;
    const libraOfTheDay = 0.16;
-   const realToDay = 5.05 
+   const realToDay = 5.05
 
    // isso sera alterado 
-   let conversionDolarToDolar  =  inputValue;
-   let conversionDolarToReal =  inputValue *   realToDay;
-   let conversionDolarToEuro =  inputValue * euroOfTheDay;
-   let conversionDolarToBitcoin =  inputValue * bitcoinDoDia;
-   let conversionDolarToLibraExterlina =  inputValue * libraOfTheDay;
+   let conversionDolarToDolar = inputValue;
+   let conversionDolarToReal = inputValue * realToDay;
+   let conversionDolarToEuro = inputValue * euroOfTheDay;
+   let conversionDolarToBitcoin = inputValue * bitcoinDoDia;
+   let conversionDolarToLibraExterlina = inputValue * libraOfTheDay;
 
    if (firstSelector == "dolar" && secondSelector == "dolar") {
 
@@ -286,12 +286,12 @@ function convertDolar() {
 
       // DEVE EXIBIR MAIS CASAS DECIMAIS
    } else if (firstSelector == "dolar" && secondSelector == "bitcoin") {
-     
-         value2.innerHTML = new Intl.NumberFormat("en-US", {
-         style: "currency",   
+
+      value2.innerHTML = new Intl.NumberFormat("en-US", {
+         style: "currency",
          currency: "BTC"
       }).format(conversionDolarToBitcoin);
-   
+
 
    } else if (firstSelector == "dolar" && secondSelector == "euro") {
 
@@ -309,7 +309,7 @@ function convertDolar() {
          currency: "GBP"
       }).format(conversionDolarToLibraExterlina);
 
- 
+
 
    } else if (firstSelector == "dolar" && secondSelector == "real") {
 
@@ -328,69 +328,69 @@ function convertEuro() {
    const value1 = document.querySelector(".currency_value_to_convert");
    const value2 = document.querySelector(".currency_value");
 
-   const primeiroSeletor = document.querySelector(".box_select_one").value
-   const segundoSeletor = document.querySelector(".box_select_two").value;
+   const firstSelector = document.querySelector(".box_select_one").value
+   const secondSelector = document.querySelector(".box_select_two").value;
    // input do do valor
-   const valorDoImput = document.querySelector(".input_values").value;
+   const inputValue = document.querySelector(".input_values").value;
 
    // vai ser alterados nas outras funçoes
-   value1.innerHTML = valorDoImput;
+   value1.innerHTML = inputValue;
 
    // variaveis de conversao
 
-   const euroDoDia = 0.95;
+   const euroOfTheDay = 0.95;
    const bitcoinDoDia = 0.0000072;
-   const libraDoDia = 0.16;
-   const realDoDia = 5.05 
+   const libraOfTheDay = 0.16;
+   const realToDay = 5.05
 
    // isso sera alterado 
-   let conversaoDolarParaDolar  = valorDoImput;
-   let conversaoDolarParaReal = valorDoImput *   realDoDia;
-   let conversaoDoDolarlParaEuro = valorDoImput * euroDoDia;
-   let conversaodoDolarParaBitcoin = valorDoImput * bitcoinDoDia;
-   let conversaoDolarParaLibraExterlina = valorDoImput * libraDoDia;
+   let conversionDolarToDolar = inputValue;
+   let conversionDolarToReal = inputValue * realToDay;
+   let conversionDolarToEuro = inputValue * euroOfTheDay;
+   let conversionDolarToBitcoin = inputValue * bitcoinDoDia;
+   let conversionDolarToLibraExterlina = inputValue * libraOfTheDay;
 
-   if (primeiroSeletor == "euro" && segundoSeletor == "dolar") {
+   if (firstSelector == "dolar" && secondSelector == "dolar") {
 
       value2.innerHTML = new Intl.NumberFormat("en-US", {
          style: "currency",
          currency: "USD"
-      }).format(conversaoDolarParaDolar);
+      }).format(conversionDolarToDolar);
 
 
       // DEVE EXIBIR MAIS CASAS DECIMAIS
-   } else if (primeiroSeletor == "euro" && segundoSeletor == "bitcoin") {
-     
-         value2.innerHTML = new Intl.NumberFormat("en-US", {
-         style: "currency",   
-         currency: "BTC"
-      }).format(conversaodoDolarParaBitcoin);
-   
+   } else if (firstSelector == "dolar" && secondSelector == "bitcoin") {
 
-   } else if (primeiroSeletor == "euro" && segundoSeletor == "euro") {
+      value2.innerHTML = new Intl.NumberFormat("en-US", {
+         style: "currency",
+         currency: "BTC"
+      }).format(conversionDolarToBitcoin);
+
+
+   } else if (firstSelector == "dolar" && secondSelector == "euro") {
 
       value2.innerHTML = new Intl.NumberFormat("de-DE", {
          style: "currency",
          currency: "EUR"
-      }).format(conversaoDoDolarlParaEuro);
+      }).format(conversionDolarToEuro);
 
 
 
-   } else if (primeiroSeletor == "euro" && segundoSeletor == "libra") {
+   } else if (firstSelector == "dolar" && secondSelector == "libra") {
 
       value2.innerHTML = new Intl.NumberFormat("en-GB", {
          style: "currency",
          currency: "GBP"
-      }).format(conversaoDolarParaLibraExterlina);
+      }).format(conversionDolarToLibraExterlina);
 
- 
 
-   } else if (primeiroSeletor == "euro" && segundoSeletor == "real") {
+
+   } else if (firstSelector == "dolar" && secondSelector == "real") {
 
       value2.innerHTML = new Intl.NumberFormat("pt-BR", {
          style: "currency",
          currency: "BRL"
-      }).format(conversaoDolarParaReal);
+      }).format(conversionDolarToReal);
 
 
 
