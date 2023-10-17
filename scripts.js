@@ -20,6 +20,7 @@ function selectorPrimary() {
    const imagem1 = document.querySelector(".img_convert");
    const text1 = document.querySelector(".currency");
    const selectPrime = document.querySelector(".box_select_one");
+   const value1 = document.querySelector(".currency_value_to_convert");
 
 
    if (selectPrime.value == "real") {
@@ -91,6 +92,7 @@ function selectorSecundary() {
    const imagem2 = document.querySelector(".img_converted");
    const text2 = document.getElementById("name_currency");
    const selectSecundary = document.querySelector(".box_select_two");
+   const value2 = document.querySelector(".currency_value");
 
    if (selectSecundary.value == "real") {
       imagem2.src = "./assets/brasil.png";
@@ -265,15 +267,17 @@ function convertDolar() {
    value1.innerHTML = valorDoImput;
 
    // variaveis de conversao
-   const dolarDoDia = 5.05;
-   const euroDoDia = 0.19;
+
+   const euroDoDia = 0.95;
    const bitcoinDoDia = 0.0000072;
    const libraDoDia = 0.16;
+   const realDoDia = 5.05 
 
    // isso sera alterado 
    let conversaoDolarParaDolar  = valorDoImput;
+   let conversaoDolarParaReal = valorDoImput *   realDoDia;
    let conversaoDoDolarlParaEuro = valorDoImput * euroDoDia;
-   let conversaodoDolarParaBitcoin = valorDoImput / bitcoinDoDia;
+   let conversaodoDolarParaBitcoin = valorDoImput * bitcoinDoDia;
    let conversaoDolarParaLibraExterlina = valorDoImput * libraDoDia;
 
    if (primeiroSeletor == "dolar" && segundoSeletor == "dolar") {
@@ -281,7 +285,7 @@ function convertDolar() {
       value2.innerHTML = new Intl.NumberFormat("en-US", {
          style: "currency",
          currency: "USD"
-      }).format(conversaoRealParaDolar);
+      }).format(conversaoDolarParaDolar);
 
 
       // DEVE EXIBIR MAIS CASAS DECIMAIS
@@ -290,7 +294,7 @@ function convertDolar() {
          value2.innerHTML = new Intl.NumberFormat("en-US", {
          style: "currency",   
          currency: "BTC"
-      }).format(conversaoDeRealParaBitcoin);
+      }).format(conversaodoDolarParaBitcoin);
    
 
    } else if (primeiroSeletor == "dolar" && segundoSeletor == "euro") {
@@ -298,7 +302,7 @@ function convertDolar() {
       value2.innerHTML = new Intl.NumberFormat("de-DE", {
          style: "currency",
          currency: "EUR"
-      }).format(conversaoDeRealParaEuro);
+      }).format(conversaoDoDolarlParaEuro);
 
 
 
@@ -307,16 +311,16 @@ function convertDolar() {
       value2.innerHTML = new Intl.NumberFormat("en-GB", {
          style: "currency",
          currency: "GBP"
-      }).format(conversaoRealParaLibraExterlina);
+      }).format(conversaoDolarParaLibraExterlina);
 
-
+ 
 
    } else if (primeiroSeletor == "dolar" && segundoSeletor == "real") {
 
       value2.innerHTML = new Intl.NumberFormat("pt-BR", {
          style: "currency",
          currency: "BRL"
-      }).format(valorDoImput);
+      }).format(conversaoDolarParaReal);
 
 
 
