@@ -77,6 +77,10 @@ button:hover {
 
 }
 
+button:active {
+    opacity: 0.6;
+}
+
 section {
     border: 1px solid var(--cor-roxa);
     border-radius: 20px;
