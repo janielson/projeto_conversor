@@ -3,6 +3,7 @@
 const convertButton = document.querySelector(".convert_button");
 const selectPrime = document.querySelector(".box_select_one");
 const selectSecundary = document.querySelector(".box_select_two");
+const input = document.querySelector(".input_values");
 
 
 // aqui são os eventos junto com a duas funçoes da minha aplicação. um evento de "click" e outro de troca "change"
@@ -10,6 +11,28 @@ convertButton.addEventListener("click", main);
 selectPrime.addEventListener('change', selectorPrimary);
 selectSecundary.addEventListener('change', selectorSecundary);
 
+input.addEventListener("blur", addNumber);
+
+
+
+function addNumber(event) {
+   // lembrando que o numero do input é uma string
+   const input = document.querySelector(".input_values");
+   const decimalNumber = Number.parseFloat(input.value);
+
+   
+   const NumberFormat = new Intl.NumberFormat("pt-BR" ,  
+   {     
+      minimumFractionDigits:2, 
+   
+   });
+   
+   const formatedNumber = NumberFormat.format(decimalNumber);
+   
+
+   input.value = formatedNumber;
+
+}
 
 // troca a imagem , troca o texto , troca o tipo de moeda
 function selectorPrimary() {
@@ -182,7 +205,9 @@ function convertDolar() {
    const firstSelector = document.querySelector(".box_select_one").value
    const secondSelector = document.querySelector(".box_select_two").value;
    // input do do valor
-   const inputValue = document.querySelector(".input_values").value;
+   let inputValue = document.querySelector(".input_values").value;
+   let newNumber = Number.parseFloat(inputValue);
+   inputValue = newNumber;
 
    // vai ser alterados nas outras funçoes
    value1.innerHTML = inputValue;
@@ -256,13 +281,16 @@ function convertReal() {
 
    const firstSelector = document.querySelector(".box_select_one").value
    const secondSelector = document.querySelector(".box_select_two").value;
-   // input do do valor
-   const inputValue = document.querySelector(".input_values").value;
 
-   // vai ser alterados nas outras funçoes
+   
+   let inputValue = document.querySelector(".input_values").value;
+   let newNumber = Number.parseFloat(inputValue);
+   inputValue = newNumber;
+
+   
    value1.innerHTML = inputValue;
 
-   // variaveis de conversao
+   
    const dollarOfTheDay = 5.05;
    const euroOfTheDay = 0.19;
    const bitcoinOfTheDay = 0.0000072;
@@ -270,6 +298,10 @@ function convertReal() {
 
    // isso sera alterado 
    let conversionRealToDollar = inputValue / dollarOfTheDay;
+
+   console.log(inputValue);
+
+   
    let conversionRealToEuro = inputValue * euroOfTheDay;
 
 
@@ -298,9 +330,8 @@ function convertReal() {
 
       }).format(conversionRealToBitcoin);
 
-      console.log(value2);
-      console.log(conversionRealToBitcoin);
-
+     
+      
 
 
 
@@ -341,13 +372,15 @@ function convertEuro() {
 
    const firstSelector = document.querySelector(".box_select_one").value
    const secondSelector = document.querySelector(".box_select_two").value;
-   // input do do valor
-   const inputValue = document.querySelector(".input_values").value;
+   
+   let inputValue = document.querySelector(".input_values").value;
+   let newNumber = Number.parseFloat(inputValue);
+   inputValue = newNumber;
 
-   // vai ser alterados nas outras funçoes
+   
    value1.innerHTML = inputValue;
 
-   // variaveis de conversao
+   
 
    const euroOfTheDay = 0.95;
    const libraOfTheDay = 0.16;
@@ -356,7 +389,7 @@ function convertEuro() {
    const taxaDeCambioBitcoin = 0.0000371746;
    const taxaDeCambiolibra = 0.86834;
 
-   // isso sera alterado 
+ 
    let conversionEuroToDolar = inputValue * taxaDeCambioDolar;
    let conversionEuroToReal = inputValue * taxaDeCambioReal; 
    let conversionEuroToEuro = inputValue;
@@ -416,8 +449,10 @@ function convertLibra() {
 
    const firstSelector = document.querySelector(".box_select_one").value
    const secondSelector = document.querySelector(".box_select_two").value;
-   // input do do valor
-   const inputValue = document.querySelector(".input_values").value;
+   
+   let inputValue = document.querySelector(".input_values").value;
+   let newNumber = Number.parseFloat(inputValue);
+   inputValue = newNumber;
 
    // vai ser alterados nas outras funçoes
    value1.innerHTML = inputValue;
@@ -489,21 +524,20 @@ function convertBitcoin() {
 
    const firstSelector = document.querySelector(".box_select_one").value
    const secondSelector = document.querySelector(".box_select_two").value;
-   // input do do valor
-   const inputValue = document.querySelector(".input_values").value;
+   
+   let inputValue = document.querySelector(".input_values").value;
+   let newNumber = Number.parseFloat(inputValue);
+   inputValue = newNumber;
 
-   // vai ser alterados nas outras funçoes
    value1.innerHTML = inputValue;
 
-   // variaveis de conversao
-
+  
    const taxaDeCambioDolar = 1.21532 ;
    const taxaDeCambioReal = 143.63078;
    const taxaDeCambioBitcoin = 28.44638 ;
    const taxaDeCambioEuro = 26.92684;
    const taxaDeCambiolibra =  23.10325
 
-   // isso sera alterado 
    let conversionBitcoionToDolar = inputValue * taxaDeCambioBitcoin;
    let conversionBitcoinToReal = inputValue * taxaDeCambioReal; 
    let conversionBitcoinToEuro = inputValue * taxaDeCambioEuro;
