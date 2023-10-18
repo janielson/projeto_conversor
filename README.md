@@ -3,4 +3,6 @@
 <h3>TECNOLOGIA USADA </h3> <br> 
 <p> -> HTML </p> 
 <p> -> CSS  </p> 
-<p> -> JAVASCRIPT </p> 
+<p> -> JAVASCRIPT </p> <br>
+
+<img src="https://github.com/janielson/projeto_conversor/blob/main/assets/imgREADME.png?raw=true">
