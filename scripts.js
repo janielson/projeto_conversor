@@ -1,12 +1,12 @@
 
-// aqui chamo os meus principais recursos para poder fazer a logica da minha aplicação 
+
 const convertButton = document.querySelector(".convert_button");
 const selectPrime = document.querySelector(".box_select_one");
 const selectSecundary = document.querySelector(".box_select_two");
 const input = document.querySelector(".input_values");
 
 
-// aqui são os eventos junto com a duas funçoes da minha aplicação. um evento de "click" e outro de troca "change"
+
 convertButton.addEventListener("click", main);
 selectPrime.addEventListener('change', selectorPrimary);
 selectSecundary.addEventListener('change', selectorSecundary);
@@ -15,26 +15,27 @@ input.addEventListener("blur", addNumber);
 
 
 
-function addNumber(event) {
-   // lembrando que o numero do input é uma string
-   const input = document.querySelector(".input_values");
-   const decimalNumber = Number.parseFloat(input.value);
+// function addNumber(event) {
+   
+//    const input = document.querySelector(".input_values");
+//    const decimalNumber = Number.parseFloat(input.value)
 
    
-   const NumberFormat = new Intl.NumberFormat("pt-BR" ,  
-   {     
-      minimumFractionDigits:2, 
+//    const NumberFormat = new Intl.NumberFormat("pt-BR" , 
+
+//    {     
+//       minimumFractionDigits:2, 
    
-   });
+//    });
    
-   const formatedNumber = NumberFormat.format(decimalNumber);
+//    const formatedNumber = NumberFormat.format(decimalNumber);
    
 
-   input.value = formatedNumber;
+//    input.value = formatedNumber;
 
-}
+// }
 
-// troca a imagem , troca o texto , troca o tipo de moeda
+
 function selectorPrimary() {
    const image1 = document.querySelector(".img_convert");
    const text1 = document.querySelector(".currency");
@@ -106,7 +107,7 @@ function selectorPrimary() {
 
 
 }
-// troca a imagem , troca o texto , troca o tipo de moeda
+
 function selectorSecundary() {
    const image2 = document.querySelector(".img_converted");
    const text2 = document.getElementById("name_currency");
@@ -363,6 +364,8 @@ function convertReal() {
 
 
    }
+
+
 
 }
 
